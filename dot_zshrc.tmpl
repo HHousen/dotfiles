@@ -25,14 +25,14 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.zsh_history
 
-# Aliases
-alias cat=ccat
-
 # Platform specific customizations
 source ~/.platformrc
 
 source ~/antigen.zsh
 antigen init ~/.antigenrc
+
+# Aliases
+alias cat=ccat
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
