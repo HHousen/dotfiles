@@ -6,6 +6,22 @@
 
 Note: [dot_zshrc.tmpl](dot_zshrc.tmpl) is set up to use [conda](https://docs.conda.io/en/latest/). Make sure to set `conda_path` in `~/.config/chezmoi/chezmoi.toml` so `chezmoi` can add conda to your path correctly. This is accomplished through [`chezmoi`'s templates](https://github.com/twpayne/chezmoi/blob/master/docs/HOWTO.md#use-templates).
 
+My `~/.config/chezmoi/chezmoi.toml` contains the following:
+
+```toml
+[data]
+    conda_path="/home/HHousen/anaconda3/"
+    use_conda="yes"
+```
+
+If you **don't use conda** then your file should look like this:
+
+```toml
+[data]
+    conda_path=""
+    use_conda="no"
+```
+
 ### One Command
 
 Run `sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply HHousen` to get everything downloaded and installed or follow the individual steps below.
@@ -25,3 +41,4 @@ Run `sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply HHousen` to get everyt
 ### Fonts
 
 The font I use is the [Meslo Nerd Font patched for Powerlevel10k](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k).
+
