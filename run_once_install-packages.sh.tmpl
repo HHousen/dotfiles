@@ -1,9 +1,9 @@
 #!/bin/sh
 
 {{ if eq .chezmoi.os "linux" -}}
-sudo apt install thefuck autojump
+sudo apt install thefuck autojump atuin
 {{ else if eq .chezmoi.os "darwin" -}}
-brew install thefuck autojump
+brew install thefuck autojump atuin
 {{ end -}}
 
 ln -s -f ~/.tmux_runtime/.tmux.conf ~/.tmux.conf
