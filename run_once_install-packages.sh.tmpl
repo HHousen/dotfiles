@@ -1,7 +1,8 @@
 #!/bin/sh
 
 {{ if eq .chezmoi.os "linux" -}}
-sudo apt install thefuck autojump atuin
+#sudo apt install thefuck autojump atuin
+sudo pacman -S thefuck atuin
 {{ else if eq .chezmoi.os "darwin" -}}
 brew install thefuck autojump atuin
 {{ end -}}
