@@ -14,19 +14,17 @@ antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
 antigen bundle command-not-found
-antigen bundle docker
-antigen bundle autojump
 antigen bundle colorize
 antigen bundle magic-enter
 antigen bundle safe-paste
 antigen bundle thefuck
+antigen bundle dirhistory
 
 # Additional bundles
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
 antigen bundle ael-code/zsh-colored-man-pages
-antigen bundle kennethreitz/autoenv
 antigen bundle b4b4r07/enhancd
 antigen bundle supercrabtree/k
 antigen bundle esc/conda-zsh-completion
