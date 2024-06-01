@@ -2,13 +2,13 @@
 
 # Install GEF (GDB Enhanced Features)
 
-{{ if eq .chezmoi.os "linux" -}}
+#{{ if eq .chezmoi.os "linux" -}}
 # Get the hash of the commit
-ref=$(wget -q -O- https://api.github.com/repos/hugsy/gef/git/ref/heads/master | grep '"sha"' | tr -s ' ' | cut -d ' ' -f 3 | tr -d "," | tr -d '"')
+#ref=$(wget -q -O- https://api.github.com/repos/hugsy/gef/git/ref/heads/master | grep '"sha"' | tr -s ' ' | cut -d ' ' -f 3 | tr -d "," | tr -d '"')
 
 # Download the file
-wget -q "https://github.com/hugsy/gef/raw/master/gef.py" -O "${HOME}/.gef-${ref}.py"
+#wget -q "https://github.com/hugsy/gef/raw/master/gef.py" -O "${HOME}/.gef-${ref}.py"
 
 # Create the new gdbinit
-echo "source ~/.gef-${ref}.py" > ~/.gdbinit
-{{ end -}}
+#echo "source ~/.gef-${ref}.py" > ~/.gdbinit
+#{{ end -}}
