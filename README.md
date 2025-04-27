@@ -4,18 +4,20 @@
 
 ## Installation/Setup
 
-Note: [dot_zshrc.tmpl](dot_zshrc.tmpl) is set up to use [conda](https://docs.conda.io/en/latest/). Make sure to set `conda_path` in `~/.config/chezmoi/chezmoi.toml` so `chezmoi` can add conda to your path correctly. This is accomplished through [`chezmoi`'s templates](https://github.com/twpayne/chezmoi/blob/master/docs/HOWTO.md#use-templates).
-
-My `~/.config/chezmoi/chezmoi.toml` contains the following:
+Before following the installation steps below, create the file `~/.config/chezmoi/chezmoi.toml` with the following content:
 
 ```toml
 [data]
     conda_path="/opt/anaconda/"
-    use_conda=true
     manage_firefox_user_chrome=true
 ```
 
-If you **don't use conda** then set `use_conda=false` and `conda_path` to anything.
+This file defines variables to be used by [`chezmoi`'s templates](https://github.com/twpayne/chezmoi/blob/master/docs/HOWTO.md#use-templates).
+
+Explanation of the options:
+
+- `conda_path`: Path to your [conda](https://docs.conda.io/en/latest/) installation. If you **don't use conda** then remove `conda_path` or set it to an empty string.
+- `manage_firefox_user_chrome`: Set to true to symlink [dot_firefoxUserChrome.css](./dot_firefoxUserChrome.css) into `~/.mozilla/firefox/<profile>/chrome/userChrome.css` (where `<profile>` is automatically determined and is probably your default firefox profile). This is carried out by the [run_once_after_firefox_user_chrome.sh.tmpl](./.chezmoiscripts/run_once_after_firefox_user_chrome.sh.tmpl) script. The default options in [dot_firefoxUserChrome.css](./dot_firefoxUserChrome.css) hide the horizontal tabs and is intended to be used with the [Tree Style Tab](https://github.com/piroor/treestyletab) firefox extension.
 
 ### One Command
 
