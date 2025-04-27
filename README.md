@@ -1,6 +1,6 @@
 # HHousen's dotfiles
 
-> HHousen's configuration files managed by [chezmoi](https://github.com/twpayne/chezmoi). Uses [Zsh](https://en.wikipedia.org/wiki/Z_shell), [Antigen](https://github.com/zsh-users/antigen) for plugin management, [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/) for plugins and themes, [powerlevel10k](https://github.com/romkatv/powerlevel10k) as the theme, [Oh My Tmux](https://github.com/gpakosz/.tmux) for custom tmux configuration, [GEF](https://github.com/hugsy/gef) for extra features for GDB, and [the ultimate vim configuration](https://github.com/amix/vimrc).
+> HHousen's configuration files managed by [chezmoi](https://github.com/twpayne/chezmoi). Uses [Zsh](https://en.wikipedia.org/wiki/Z_shell), [Antigen](https://github.com/zsh-users/antigen) for plugin management, [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/) for plugins and themes, [powerlevel10k](https://github.com/romkatv/powerlevel10k) as the theme, and [Oh My Tmux](https://github.com/gpakosz/.tmux) for custom tmux configuration.
 
 ## Installation/Setup
 
@@ -10,17 +10,12 @@ My `~/.config/chezmoi/chezmoi.toml` contains the following:
 
 ```toml
 [data]
-    conda_path="/home/HHousen/anaconda3/"
-    use_conda="yes"
+    conda_path="/opt/anaconda/"
+    use_conda=true
+    manage_firefox_user_chrome=true
 ```
 
-If you **don't use conda** then your file should look like this:
-
-```toml
-[data]
-    conda_path=""
-    use_conda="no"
-```
+If you **don't use conda** then set `use_conda=false` and `conda_path` to anything.
 
 ### One Command
 
@@ -42,3 +37,9 @@ Run `sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply HHousen` to get everyt
 
 The font I use is the [Meslo Nerd Font patched for Powerlevel10k](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k).
 
+## Previous tools
+
+Some previous tools that are no longer included:
+
+- [GEF](https://github.com/hugsy/gef) for extra features for GDB
+- [the ultimate vim configuration](https://github.com/amix/vimrc)
