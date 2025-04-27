@@ -1,5 +1,6 @@
 #!/bin/bash
 
+{{ if .manage_firefox_user_chrome -}}
 PROFILES_PATH="$HOME/.mozilla/firefox"
 PROFILES_INI="$PROFILES_PATH/profiles.ini"
 
@@ -24,6 +25,10 @@ fi
 
 mkdir -p "$FIREFOX_PROFILE/chrome"
 
-rm "$FIREFOX_PROFILE/chrome/userChrome.css"
+if [ -f "$FIREFOX_PROFILE/chrome/userChrome.css" ]; then
+  rm "$FIREFOX_PROFILE/chrome/userChrome.css"
+fi
 
 ln -sf ~/.firefoxUserChrome.css "$FIREFOX_PROFILE/chrome/userChrome.css"
+echo "Symlinked ~/.firefoxUserChrome.css to $FIREFOX_PROFILE/chrome/userChrome.css"
+{{ end -}}
