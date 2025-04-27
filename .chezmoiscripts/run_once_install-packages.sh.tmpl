@@ -8,6 +8,7 @@ brew install thefuck atuin
 
 ln -s -f ~/.tmux_runtime/.tmux.conf ~/.tmux.conf
 
-if [ ! -f ~/antigen.zsh ]; then
+# if ~/antigen.zsh does not exists or is empty, download it
+if [ ! -f ~/antigen.zsh ] || [ ! -s ~/antigen.zsh ]; then
     curl -L git.io/antigen > ~/antigen.zsh
 fi
