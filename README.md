@@ -54,6 +54,14 @@ The font I use is the [Meslo Nerd Font patched for Powerlevel10k](https://github
 - [zoxide](https://github.com/ajeetdsouza/zoxide) for a smarter `cd` command
 - [bat](https://github.com/sharkdp/bat) for a better `cat` command
 
+## Workflow
+
+1. Run `chezmoi add <file>` to add files to the chezmoi repo.
+2. Edit files in `~/.local/share/chezmoi` or wherever the chezmoi repo is (`chezmoi cd` to find out).
+3. Git commit (and eventually push) the changes.
+4. Run `chezmoi diff` to preview the changes that will be made to your `$HOME`.
+5. Run `chezmoi apply` to apply the changes to your `$HOME`.
+
 ### Previous tools
 
 Some previous tools that are no longer included:
