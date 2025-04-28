@@ -10,6 +10,8 @@ Before following the installation steps below, create the file `~/.config/chezmo
 [data]
     conda_path="/opt/anaconda/"
     manage_firefox_user_chrome=true
+    git_email="hayden@haydenhousen.com"
+    git_name="Hayden Housen"
 ```
 
 This file defines variables to be used by [`chezmoi`'s templates](https://github.com/twpayne/chezmoi/blob/master/docs/HOWTO.md#use-templates).
@@ -18,6 +20,7 @@ Explanation of the options:
 
 - `conda_path`: Path to your [conda](https://docs.conda.io/en/latest/) installation. If you **don't use conda** then remove `conda_path` or set it to an empty string.
 - `manage_firefox_user_chrome`: Set to true to symlink [dot_firefoxUserChrome.css](./dot_firefoxUserChrome.css) into `~/.mozilla/firefox/<profile>/chrome/userChrome.css` (where `<profile>` is automatically determined and is probably your default firefox profile). This is carried out by the [run_once_after_firefox_user_chrome.sh.tmpl](./.chezmoiscripts/run_once_after_firefox_user_chrome.sh.tmpl) script. The default options in [dot_firefoxUserChrome.css](./dot_firefoxUserChrome.css) hide the horizontal tabs and is intended to be used with the [Tree Style Tab](https://github.com/piroor/treestyletab) firefox extension.
+- `git_email` and `git_name`: Global git user email and name set in `~/.gitconfig`.
 
 ### One Command
 

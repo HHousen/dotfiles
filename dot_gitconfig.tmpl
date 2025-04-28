@@ -1,0 +1,18 @@
+[user]
+	email = {{ .git_email }}
+	name = {{ .git_name }}
+[init]
+	defaultBranch = main
+[push]
+	autoSetupRemote = true
+[alias]
+	# Undo last commit but keep changes
+	undo = reset HEAD~1 --soft
+	# Undoes an undo by using the reflog
+	redo = !git reset 'HEAD@{1}' --soft
+	# Edit the last commit message
+	edit = commit --amend --only
+	# List aliases
+	aliases = config --get-regexp alias
+[branch]
+	sort = -committerdate
