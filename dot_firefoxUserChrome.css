@@ -29,3 +29,8 @@ html#main-window body:has(#sidebar-box[sidebarcommand=treestyletab_piro_sakura_n
   top: 9px;
   right: 1px;
 }
+
+/* https://github.com/piroor/treestyletab/wiki/Code-snippets-for-custom-style-rules#hide-the-tree-style-tab-header-at-the-top-of-the-sidebar */
+#sidebar-box[sidebarcommand="treestyletab_piro_sakura_ne_jp-sidebar-action"] #sidebar-header {
+  display: none;
+}
