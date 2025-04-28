@@ -1,6 +1,6 @@
 # HHousen's dotfiles
 
-> HHousen's configuration files managed by [chezmoi](https://github.com/twpayne/chezmoi). Uses [Zsh](https://en.wikipedia.org/wiki/Z_shell), [Antigen](https://github.com/zsh-users/antigen) for plugin management, [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/) for plugins and themes, [powerlevel10k](https://github.com/romkatv/powerlevel10k) as the theme, and [Oh My Tmux](https://github.com/gpakosz/.tmux) for custom tmux configuration.
+> HHousen's configuration files managed by [chezmoi](https://github.com/twpayne/chezmoi). Uses [Zsh](https://en.wikipedia.org/wiki/Z_shell), [Antigen](https://github.com/zsh-users/antigen) for plugin management, [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/) for plugins and themes, [powerlevel10k](https://github.com/romkatv/powerlevel10k) as the theme, [Oh My Tmux](https://github.com/gpakosz/.tmux) for custom tmux configuration, [Atuin](https://github.com/atuinsh/atuin) for terminal history.
 
 ## Installation/Setup
 
@@ -42,7 +42,19 @@ Run `sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply HHousen` to get everyt
 
 The font I use is the [Meslo Nerd Font patched for Powerlevel10k](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k).
 
-## Previous tools
+## Included tools
+
+- [zsh](https://www.zsh.org/) as the shell
+- [chezmoi](https://github.com/twpayne/chezmoi) for dotfiles management
+- [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/) for plugins and themes
+- [Antigen](https://github.com/zsh-users/antigen) for plugin management
+- [powerlevel10k](https://github.com/romkatv/powerlevel10k) as the theme
+- [Oh My Tmux](https://github.com/gpakosz/.tmux) for custom tmux configuration
+- [Atuin](https://github.com/atuinsh/atuin) for terminal history
+- [zoxide](https://github.com/ajeetdsouza/zoxide) for a smarter `cd` command
+- [bat](https://github.com/sharkdp/bat) for a better `cat` command
+
+### Previous tools
 
 Some previous tools that are no longer included:
 

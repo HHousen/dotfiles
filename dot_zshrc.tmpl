@@ -36,7 +36,8 @@ source ~/antigen.zsh
 antigen init ~/.antigenrc
 
 # Aliases
-alias cat=ccat
+alias rcat="$(which cat)"
+alias cat="$(which bat)"
 
 source /usr/share/nvm/init-nvm.sh
 eval "$(atuin init zsh)"

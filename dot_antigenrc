@@ -9,7 +9,6 @@ antigen use oh-my-zsh
 antigen bundle git  # git shell completions
 antigen bundle pip  # pip shell completions and aliases
 antigen bundle command-not-found
-antigen bundle colorize  # adds ccat command
 antigen bundle safe-paste  # prevent any commands from running when pasted
 antigen bundle thefuck  # double press ESC to trigger thefuck
 antigen bundle dirhistory  # keyboard shortcuts to navigate directories
