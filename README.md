@@ -61,3 +61,4 @@ Some previous tools that are no longer included:
 - [GEF](https://github.com/hugsy/gef) for extra features for GDB
 - [the ultimate vim configuration](https://github.com/amix/vimrc)
 - [tealdeer](https://github.com/tealdeer-rs/tealdeer) for command-line access to [tldr-pages](https://github.com/tldr-pages/tldr) (set of help pages for command-line tools that is example driven)
+- [lsd](https://github.com/lsd-rs/lsd) for a **d**eluxe `ls` command

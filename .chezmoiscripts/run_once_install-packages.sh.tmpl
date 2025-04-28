@@ -2,9 +2,9 @@
 
 echo "Installing packages... May need sudo access"
 {{ if eq .chezmoi.os "linux" -}}
-sudo pacman -S --needed thefuck atuin zoxide fzf bat tealdeer
+sudo pacman -S --needed thefuck atuin zoxide fzf bat tealdeer lsd
 {{ else if eq .chezmoi.os "darwin" -}}
-brew install thefuck atuin zoxide fzf bat tealdeer
+brew install thefuck atuin zoxide fzf bat tealdeer lsd
 {{ end -}}
 
 echo "Updating tldr cache..."
