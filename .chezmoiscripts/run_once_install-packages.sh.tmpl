@@ -1,9 +1,9 @@
 #!/bin/sh
 
 {{ if eq .chezmoi.os "linux" -}}
-sudo pacman -S --needed thefuck atuin
+sudo pacman -S --needed thefuck atuin zoxide fzf
 {{ else if eq .chezmoi.os "darwin" -}}
-brew install thefuck atuin
+brew install thefuck atuin zoxide fzf
 {{ end -}}
 
 ln -s -f ~/.tmux_runtime/.tmux.conf ~/.tmux.conf
