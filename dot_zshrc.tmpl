@@ -30,7 +30,8 @@ HISTFILE=~/.zsh_history
 # Platform specific customizations
 source ~/.platformrc
 
-ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+# Comment out the auto suggest strategy used by zsh-autosuggestions so atuin can inject itself and override it
+#ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 source ~/antigen.zsh
 antigen init ~/.antigenrc
