@@ -13,6 +13,9 @@ description = "Read/write only the active workspace; ask before leaving the sand
 
 [permissions.cwd-only.filesystem]
 ":minimal" = "read"
+"~/.cache/pypoetry/virtualenvs" = "read"
+"~/.nvm" = "read"
+"~/.pyenv" = "read"
 
 [permissions.cwd-only.filesystem.":workspace_roots"]
 "." = "write"
