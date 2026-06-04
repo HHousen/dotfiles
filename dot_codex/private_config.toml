@@ -4,6 +4,7 @@
 
 approvals_reviewer = "user"
 approval_policy = "on-request"
+check_for_update_on_startup = false
 project_root_markers = []
 default_permissions = "cwd-only"
 
