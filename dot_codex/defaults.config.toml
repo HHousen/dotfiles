@@ -1,0 +1,20 @@
+# User-defined Codex profile: defaults.
+# Docs: https://developers.openai.com/codex/config-advanced#profiles
+# Use with: codex --profile defaults
+
+approvals_reviewer = "user"
+approval_policy = "on-request"
+project_root_markers = []
+default_permissions = "cwd-only"
+
+[permissions.cwd-only]
+description = "Read/write only the active workspace; ask before leaving the sandbox."
+
+[permissions.cwd-only.filesystem]
+":minimal" = "read"
+
+[permissions.cwd-only.filesystem.":workspace_roots"]
+"." = "write"
+
+[permissions.cwd-only.network]
+enabled = false
