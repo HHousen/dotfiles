@@ -40,5 +40,6 @@
         "matcher": "Bash"
       }
     ]
-  }
+  },
+  "theme": "dark"
 }
