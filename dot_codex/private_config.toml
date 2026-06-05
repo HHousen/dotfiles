@@ -38,3 +38,7 @@ enabled = false
 [tui]
 status_line = ["model-with-reasoning", "current-dir", "permissions", "context-remaining", "used-tokens", "total-input-tokens", "total-output-tokens", "git-branch", "run-state", "weekly-limit"]
 status_line_use_colors = true
+
+[analytics]
+enabled = false
+
