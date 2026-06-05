@@ -6,19 +6,35 @@ approvals_reviewer = "user"
 approval_policy = "on-request"
 check_for_update_on_startup = false
 project_root_markers = []
-default_permissions = "cwd-only"
+default_permissions = "CWD R/W"
 
-[permissions.cwd-only]
-description = "Read/write only the active workspace; ask before leaving the sandbox."
+[permissions."CWD R/W"]
+description = "Codex can read and edit files in the current workspace, and run commands. Approval is required to access the internet or read/edit other files."
 
-[permissions.cwd-only.filesystem]
+[permissions."CWD R/W".filesystem]
 ":minimal" = "read"
 "~/.cache/pypoetry/virtualenvs" = "read"
 "~/.nvm" = "read"
 "~/.pyenv" = "read"
 
-[permissions.cwd-only.filesystem.":workspace_roots"]
+[permissions."CWD R/W".filesystem.":workspace_roots"]
 "." = "write"
 
-[permissions.cwd-only.network]
+[permissions."CWD R/W".network]
 enabled = false
+
+[permissions."CWD Read Only"]
+description = "Codex can read files in the current workspace. Approval is required to read other files, edit files, or access the internet."
+
+[permissions."CWD Read Only".filesystem]
+":minimal" = "read"
+
+[permissions."CWD Read Only".filesystem.":workspace_roots"]
+"." = "read"
+
+[permissions."CWD Read Only".network]
+enabled = false
+
+[tui]
+status_line = ["model-with-reasoning", "current-dir", "permissions", "context-remaining", "used-tokens", "total-input-tokens", "total-output-tokens", "git-branch", "run-state", "weekly-limit"]
+status_line_use_colors = true
