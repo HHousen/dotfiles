@@ -34,7 +34,7 @@ Run `sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply HHousen` to get everyt
 
 3. Preview changes that `chezmoi` would make to your `$HOME`: `chezmoi diff`.
 
-4. Apply the changes: `chezmoi apply`. This will automatically install antigen and packages required for certain plugins using the [run_once_install-packages.sh](run_once_install-packages.sh) script. Upon the first launch, `antigen` will initialize and install everything else.
+4. Apply the changes: `chezmoi apply`. This will automatically install antigen and packages required for certain plugins using the [run_once_install-packages.sh.tmpl](./.chezmoiscripts/run_once_install-packages.sh.tmpl) script. Upon the first launch, `antigen` will initialize and install everything else.
 
 5. Launch zsh: `zsh`.
 
@@ -45,14 +45,33 @@ The font I use is the [Meslo Nerd Font patched for Powerlevel10k](https://github
 ## Included tools
 
 - [zsh](https://www.zsh.org/) as the shell
-- [chezmoi](https://github.com/twpayne/chezmoi) for dotfiles management
+- [chezmoi](https://www.chezmoi.io/) for dotfiles management
 - [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/) for plugins and themes
 - [Antigen](https://github.com/zsh-users/antigen) for plugin management
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k) as the theme
 - [Oh My Tmux](https://github.com/gpakosz/.tmux) for custom tmux configuration
 - [Atuin](https://github.com/atuinsh/atuin) for terminal history
 - [zoxide](https://github.com/ajeetdsouza/zoxide) for a smarter `cd` command
+- [fzf](https://github.com/junegunn/fzf) for fuzzy finding
 - [bat](https://github.com/sharkdp/bat) for a better `cat` command
+- [lsd](https://github.com/lsd-rs/lsd) for a better `ls` command
+- [tealdeer](https://github.com/tealdeer-rs/tealdeer) for command-line access to [tldr-pages](https://github.com/tldr-pages/tldr)
+- [thefuck](https://github.com/nvbn/thefuck) for shell command correction
+- [nvm](https://github.com/nvm-sh/nvm) for Node.js version management
+- [pyenv](https://github.com/pyenv/pyenv) for Python version management
+
+## Notable behavior
+
+- Atuin manages command history, so zsh history persistence is disabled.
+
+## Agent configs
+
+Claude and Codex configs are split between work and personal homes:
+
+- `~/.claude-work` and `~/.claude-personal`
+- `~/.codex-work` and `~/.codex-personal`
+
+The personal Claude settings file is managed as a chezmoi symlink to the work settings file.
 
 ## Workflow
 
@@ -61,12 +80,3 @@ The font I use is the [Meslo Nerd Font patched for Powerlevel10k](https://github
 3. Git commit (and eventually push) the changes.
 4. Run `chezmoi diff` to preview the changes that will be made to your `$HOME`.
 5. Run `chezmoi apply` to apply the changes to your `$HOME`.
-
-### Previous tools
-
-Some previous tools that are no longer included:
-
-- [GEF](https://github.com/hugsy/gef) for extra features for GDB
-- [the ultimate vim configuration](https://github.com/amix/vimrc)
-- [tealdeer](https://github.com/tealdeer-rs/tealdeer) for command-line access to [tldr-pages](https://github.com/tldr-pages/tldr) (set of help pages for command-line tools that is example driven)
-- [lsd](https://github.com/lsd-rs/lsd) for a **d**eluxe `ls` command
