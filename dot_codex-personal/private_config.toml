@@ -1,5 +1,5 @@
 # Synced Codex base config.
-# Codex may append local project trust and hook trust state to ~/.codex/config.toml.
+# Codex may append local project trust and hook trust state to this config.
 # Do not re-add those local state tables to chezmoi.
 
 approvals_reviewer = "user"
@@ -35,10 +35,9 @@ description = "Codex can read files in the current workspace. Approval is requir
 [permissions."CWD Read Only".network]
 enabled = false
 
-[tui]
-status_line = ["model-with-reasoning", "current-dir", "permissions", "context-remaining", "used-tokens", "total-input-tokens", "total-output-tokens", "git-branch", "run-state", "weekly-limit"]
-status_line_use_colors = true
-
 [analytics]
 enabled = false
 
+[tui]
+status_line = ["model-with-reasoning", "current-dir", "permissions", "context-remaining", "used-tokens", "total-input-tokens", "total-output-tokens", "git-branch", "run-state", "weekly-limit"]
+status_line_use_colors = true

@@ -1,0 +1,11 @@
+model = "Qwen3.6-35B-A3B-MTP"
+model_provider = "llamacpp"
+web_search = "disabled"
+
+[model_providers.llamacpp]
+name = "llama.cpp"
+base_url = "http://localhost:9360/v1"
+wire_api = "responses"
+
+[history]
+persistence = "none"
