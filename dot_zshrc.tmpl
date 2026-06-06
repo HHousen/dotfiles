@@ -39,10 +39,12 @@ alias cat="$(which bat)"
 alias ls="lsd"
 alias cd="z"
 
-alias cwork='CLAUDE_CONFIG_DIR=~/.claude-work claude'
-alias chome='CLAUDE_CONFIG_DIR=~/.claude-personal claude'
-alias xwork='CODEX_HOME=~/.codex-work codex'
-alias xhome='CODEX_HOME=~/.codex-personal codex'
+alias claude='echo "Use cwork or chome"'
+alias codex='echo "Use xwork or xhome"'
+alias cwork='CLAUDE_CONFIG_DIR=~/.claude-work command claude'
+alias chome='CLAUDE_CONFIG_DIR=~/.claude-personal command claude'
+alias xwork='CODEX_HOME=~/.codex-work command codex'
+alias xhome='CODEX_HOME=~/.codex-personal command codex'
 
 source /usr/share/nvm/init-nvm.sh
 eval "$(atuin init zsh)"
