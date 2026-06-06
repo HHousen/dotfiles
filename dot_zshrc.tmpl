@@ -22,10 +22,10 @@ unset __conda_setup
 # <<< conda initialize <<<
 {{ end -}}
 
-# Keep 10,000,000 lines of history within the shell and save it to ~/.zsh_history:
-HISTSIZE=10000000
-SAVEHIST=10000000
-HISTFILE=~/.zsh_history
+# Disable zsh history persistence; Atuin manages command history.
+HISTSIZE=0
+SAVEHIST=0
+unset HISTFILE
 
 # Comment out the auto suggest strategy used by zsh-autosuggestions so atuin can inject itself and override it
 #ZSH_AUTOSUGGEST_STRATEGY=(history completion)
