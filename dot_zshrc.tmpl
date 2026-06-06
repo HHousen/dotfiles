@@ -45,6 +45,8 @@ alias cwork='CLAUDE_CONFIG_DIR=~/.claude-work command claude'
 alias chome='CLAUDE_CONFIG_DIR=~/.claude-personal command claude'
 alias xwork='CODEX_HOME=~/.codex-work command codex'
 alias xhome='CODEX_HOME=~/.codex-personal command codex'
+alias cwsc='cd {{ .ai_work_short_cut_path | quote }} && cwork'
+alias xwsc='cd {{ .ai_work_short_cut_path | quote }} && xwork'
 
 source /usr/share/nvm/init-nvm.sh
 eval "$(atuin init zsh)"
