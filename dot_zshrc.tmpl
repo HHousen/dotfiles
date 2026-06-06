@@ -27,9 +27,6 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.zsh_history
 
-# Platform specific customizations
-source ~/.platformrc
-
 # Comment out the auto suggest strategy used by zsh-autosuggestions so atuin can inject itself and override it
 #ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
@@ -42,8 +39,14 @@ alias cat="$(which bat)"
 alias ls="lsd"
 alias cd="z"
 
+alias cwork='CLAUDE_CONFIG_DIR=~/.claude-work claude'
+alias chome='CLAUDE_CONFIG_DIR=~/.claude-personal claude'
+alias xwork='CODEX_HOME=~/.codex-work codex'
+alias xhome='CODEX_HOME=~/.codex-personal codex'
+
 source /usr/share/nvm/init-nvm.sh
 eval "$(atuin init zsh)"
+eval "$(pyenv init - zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
