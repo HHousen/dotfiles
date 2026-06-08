@@ -23,6 +23,13 @@ description = "Codex can read and edit files in the current workspace, and run c
 [permissions."CWD R/W".network]
 enabled = false
 
+[permissions."CWD R/W + Network"]
+description = "Codex can read and edit files in the current workspace, run commands, and access the internet without approval."
+extends = "CWD R/W"
+
+[permissions."CWD R/W + Network".network]
+enabled = true
+
 [permissions."CWD Read Only"]
 description = "Codex can read files in the current workspace. Approval is required to read other files, edit files, or access the internet."
 
