@@ -13,6 +13,7 @@ description = "Codex can read and edit files in the current workspace, and run c
 
 [permissions."CWD R/W".filesystem]
 ":minimal" = "read"
+"/tmp" = "write"
 "~/.cache/pypoetry/virtualenvs" = "read"
 "~/.gitconfig" = "read"
 "~/.nvm" = "read"
