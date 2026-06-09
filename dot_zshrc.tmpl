@@ -30,6 +30,7 @@ alias xhome='CODEX_HOME=~/.codex-personal command codex'
 alias cwsc='cd {{ .ai_work_short_cut_path | quote }} && cwork'
 alias xwsc='cd {{ .ai_work_short_cut_path | quote }} && xwork'
 {{ end }}
+eval "$(zoxide init zsh)"
 eval "$(atuin init zsh)"
 eval "$(mise activate zsh)"
 
