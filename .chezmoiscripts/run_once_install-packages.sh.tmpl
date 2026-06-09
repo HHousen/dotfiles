@@ -7,6 +7,9 @@ sudo pacman -S --needed git thefuck atuin zoxide fzf bat tealdeer lsd mise
 brew install git thefuck atuin zoxide fzf bat tealdeer lsd mise
 {{ end -}}
 
+echo "Installing mise-managed tools..."
+mise install --yes
+
 echo "Updating tldr cache..."
 tldr --update
 
