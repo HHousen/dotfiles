@@ -13,6 +13,7 @@ unset HISTFILE
 zstyle ':plugin:ez-compinit' 'compstyle' 'zshzoo'
 source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
 
+# Needed for git plugin, which mostly just adds useful aliases
 function git_current_branch() {
   command git symbolic-ref --quiet --short HEAD 2>/dev/null ||
     command git rev-parse --short HEAD 2>/dev/null
