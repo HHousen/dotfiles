@@ -1,6 +1,6 @@
 # HHousen's dotfiles
 
-> HHousen's configuration files managed by [chezmoi](https://github.com/twpayne/chezmoi). Uses [Zsh](https://en.wikipedia.org/wiki/Z_shell), [Antidote](https://antidote.sh/) for plugin management, [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/) for plugins and themes, [powerlevel10k](https://github.com/romkatv/powerlevel10k) as the theme, [Oh My Tmux](https://github.com/gpakosz/.tmux) for custom tmux configuration, [Atuin](https://github.com/atuinsh/atuin) for terminal history, [mise](https://mise.jdx.dev/) for runtime and CLI tool management, and some tools from [modern-unix](https://github.com/ibraheemdev/modern-unix).
+> HHousen's configuration files managed by [chezmoi](https://github.com/twpayne/chezmoi). Uses [Zsh](https://en.wikipedia.org/wiki/Z_shell), [Antidote](https://antidote.sh/) for plugin management, [powerlevel10k](https://github.com/romkatv/powerlevel10k) as the theme, [Oh My Tmux](https://github.com/gpakosz/.tmux) for custom tmux configuration, [Atuin](https://github.com/atuinsh/atuin) for terminal history, [mise](https://mise.jdx.dev/) for runtime and CLI tool management, and some tools from [modern-unix](https://github.com/ibraheemdev/modern-unix).
 
 ## Installation/Setup
 
@@ -46,7 +46,6 @@ The font I use is the [Meslo Nerd Font patched for Powerlevel10k](https://github
 
 - [zsh](https://www.zsh.org/) as the shell
 - [chezmoi](https://www.chezmoi.io/) for dotfiles management
-- [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/) for plugins and themes
 - [Antidote](https://antidote.sh/) for plugin management
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k) as the theme
 - [Oh My Tmux](https://github.com/gpakosz/.tmux) for custom tmux configuration

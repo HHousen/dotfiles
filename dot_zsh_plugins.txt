@@ -1,26 +1,6 @@
-# Awesome Zsh Plugins: https://github.com/unixorn/awesome-zsh-plugins
-# Antidote: https://antidote.sh
-# Oh My Zsh: https://github.com/ohmyzsh/ohmyzsh
-
-# Oh My Zsh compatibility and library.
-getantidote/use-omz
-ohmyzsh/ohmyzsh path:lib
-
-# Oh My Zsh plugins.
-ohmyzsh/ohmyzsh path:plugins/git  # git shell completions
-ohmyzsh/ohmyzsh path:plugins/command-not-found
-ohmyzsh/ohmyzsh path:plugins/safe-paste  # prevent any commands from running when pasted
-ohmyzsh/ohmyzsh path:plugins/thefuck  # double press ESC to trigger thefuck
-ohmyzsh/ohmyzsh path:plugins/dirhistory  # keyboard shortcuts to navigate directories
-ohmyzsh/ohmyzsh path:plugins/cp  # adds cpv command (aka cp with progress bar aka rsync)
-ohmyzsh/ohmyzsh path:plugins/zoxide  # smarter cd command
-ohmyzsh/ohmyzsh path:plugins/colored-man-pages  # man pages with color
-
-# Additional plugins.
 zdharma-continuum/fast-syntax-highlighting
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions kind:fpath path:src
 MichaelAquilina/zsh-you-should-use  # reminds about alias for command you just ran
 
-# Theme.
 romkatv/powerlevel10k
