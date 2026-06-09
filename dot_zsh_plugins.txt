@@ -1,4 +1,5 @@
 mattmc3/ez-compinit
+ohmyzsh/ohmyzsh path:plugins/git
 zdharma-continuum/fast-syntax-highlighting
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions kind:fpath path:src
