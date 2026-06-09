@@ -17,7 +17,7 @@ ohmyzsh/ohmyzsh path:plugins/zoxide  # smarter cd command
 ohmyzsh/ohmyzsh path:plugins/colored-man-pages  # man pages with color
 
 # Additional plugins.
-zsh-users/zsh-syntax-highlighting
+zdharma-continuum/fast-syntax-highlighting
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions kind:fpath path:src
 MichaelAquilina/zsh-you-should-use  # reminds about alias for command you just ran
