@@ -16,8 +16,7 @@ description = "Codex can read and edit files in the current workspace, and run c
 "/tmp" = "write"
 "~/.cache/pypoetry/virtualenvs" = "read"
 "~/.gitconfig" = "read"
-"~/.nvm" = "read"
-"~/.pyenv" = "read"
+"~/.local/share/mise/installs" = "read"
 
 [permissions."CWD R/W".filesystem.":workspace_roots"]
 "." = "write"

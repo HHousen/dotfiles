@@ -1,6 +1,6 @@
 # HHousen's dotfiles
 
-> HHousen's configuration files managed by [chezmoi](https://github.com/twpayne/chezmoi). Uses [Zsh](https://en.wikipedia.org/wiki/Z_shell), [Antigen](https://github.com/zsh-users/antigen) for plugin management, [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/) for plugins and themes, [powerlevel10k](https://github.com/romkatv/powerlevel10k) as the theme, [Oh My Tmux](https://github.com/gpakosz/.tmux) for custom tmux configuration, [Atuin](https://github.com/atuinsh/atuin) for terminal history, and some tools from [modern-unix](https://github.com/ibraheemdev/modern-unix).
+> HHousen's configuration files managed by [chezmoi](https://github.com/twpayne/chezmoi). Uses [Zsh](https://en.wikipedia.org/wiki/Z_shell), [Antigen](https://github.com/zsh-users/antigen) for plugin management, [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/) for plugins and themes, [powerlevel10k](https://github.com/romkatv/powerlevel10k) as the theme, [Oh My Tmux](https://github.com/gpakosz/.tmux) for custom tmux configuration, [Atuin](https://github.com/atuinsh/atuin) for terminal history, [mise](https://mise.jdx.dev/) for runtime and CLI tool management (replace [pyenv](https://github.com/pyenv/pyenv) and [nvm](https://github.com/nvm-sh/nvm)), and some tools from [modern-unix](https://github.com/ibraheemdev/modern-unix).
 
 ## Installation/Setup
 
@@ -8,7 +8,6 @@ Before following the installation steps below, create the file `~/.config/chezmo
 
 ```toml
 [data]
-    conda_path="/opt/anaconda/"
     atuin_sync_address="https://api.atuin.sh"
     manage_firefox_user_chrome=true
     git_email="hayden@haydenhousen.com"
@@ -19,7 +18,6 @@ This file defines variables to be used by [`chezmoi`'s templates](https://github
 
 Explanation of the options:
 
-- `conda_path`: Path to your [conda](https://docs.conda.io/en/latest/) installation. If you **don't use conda** then remove `conda_path` or set it to an empty string.
 - `atuin_sync_address`: URL of your Atuin sync server. The public default is `https://api.atuin.sh`.
 - `manage_firefox_user_chrome`: Set to true to symlink [dot_firefoxUserChrome.css](./dot_firefoxUserChrome.css) into `~/.mozilla/firefox/<profile>/chrome/userChrome.css` (where `<profile>` is automatically determined and is probably your default firefox profile). This is carried out by the [run_once_after_firefox_user_chrome.sh.tmpl](./.chezmoiscripts/run_once_after_firefox_user_chrome.sh.tmpl) script. The default options in [dot_firefoxUserChrome.css](./dot_firefoxUserChrome.css) hide the horizontal tabs and is intended to be used with the [Tree Style Tab](https://github.com/piroor/treestyletab) firefox extension.
 - `git_email` and `git_name`: Global git user email and name set in `~/.gitconfig`.
@@ -59,12 +57,12 @@ The font I use is the [Meslo Nerd Font patched for Powerlevel10k](https://github
 - [lsd](https://github.com/lsd-rs/lsd) for a better `ls` command
 - [tealdeer](https://github.com/tealdeer-rs/tealdeer) for command-line access to [tldr-pages](https://github.com/tldr-pages/tldr)
 - [thefuck](https://github.com/nvbn/thefuck) for shell command correction
-- [nvm](https://github.com/nvm-sh/nvm) for Node.js version management
-- [pyenv](https://github.com/pyenv/pyenv) for Python version management
+- [mise](https://mise.jdx.dev/) for Node.js, Python, and npm-installed CLI tool management
 
 ## Notable behavior
 
 - Atuin manages command history, so zsh history persistence is disabled.
+- mise is activated in zsh and manages Node.js, Python, Claude Code, and Codex via [dot_config/mise/config.toml](./dot_config/mise/config.toml).
 
 ## Agent configs
 

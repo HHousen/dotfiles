@@ -7,7 +7,6 @@ antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git  # git shell completions
-antigen bundle pip  # pip shell completions and aliases
 antigen bundle command-not-found
 antigen bundle safe-paste  # prevent any commands from running when pasted
 antigen bundle thefuck  # double press ESC to trigger thefuck
@@ -20,7 +19,6 @@ antigen bundle colored-man-pages  # man pages with color
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-completions
-antigen bundle supercrabtree/k  # fancy ls command
 antigen bundle MichaelAquilina/zsh-you-should-use  # reminds about alias for command you just ran
 
 # Load the theme.

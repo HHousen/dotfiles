@@ -5,30 +5,10 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-{{ if and (hasKey . "conda_path") (ne .conda_path "") -}}
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('{{ .conda_path }}bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "{{ .conda_path }}etc/profile.d/conda.sh" ]; then
-        . "{{ .conda_path }}etc/profile.d/conda.sh"
-    else
-        export PATH="{{ .conda_path }}bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-{{ end -}}
-
 # Disable zsh history persistence; Atuin manages command history.
 HISTSIZE=0
 SAVEHIST=0
 unset HISTFILE
-
-# Comment out the auto suggest strategy used by zsh-autosuggestions so atuin can inject itself and override it
-#ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 source ~/antigen.zsh
 antigen init ~/.antigenrc
@@ -48,11 +28,9 @@ alias xhome='CODEX_HOME=~/.codex-personal command codex'
 {{ if and (hasKey . "ai_work_short_cut_path") (ne .ai_work_short_cut_path "") -}}
 alias cwsc='cd {{ .ai_work_short_cut_path | quote }} && cwork'
 alias xwsc='cd {{ .ai_work_short_cut_path | quote }} && xwork'
-{{ end -}}
-
-source /usr/share/nvm/init-nvm.sh
+{{ end }}
 eval "$(atuin init zsh)"
-eval "$(pyenv init - zsh)"
+eval "$(mise activate zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
