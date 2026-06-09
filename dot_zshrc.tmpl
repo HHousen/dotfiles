@@ -10,8 +10,8 @@ HISTSIZE=0
 SAVEHIST=0
 unset HISTFILE
 
-source ~/antigen.zsh
-antigen init ~/.antigenrc
+source ${ZDOTDIR:-$HOME}/.antidote/antidote.zsh
+antidote load
 
 # Aliases
 alias rcat="$(which cat)"

@@ -1,6 +1,6 @@
 # HHousen's dotfiles
 
-> HHousen's configuration files managed by [chezmoi](https://github.com/twpayne/chezmoi). Uses [Zsh](https://en.wikipedia.org/wiki/Z_shell), [Antigen](https://github.com/zsh-users/antigen) for plugin management, [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/) for plugins and themes, [powerlevel10k](https://github.com/romkatv/powerlevel10k) as the theme, [Oh My Tmux](https://github.com/gpakosz/.tmux) for custom tmux configuration, [Atuin](https://github.com/atuinsh/atuin) for terminal history, [mise](https://mise.jdx.dev/) for runtime and CLI tool management (replace [pyenv](https://github.com/pyenv/pyenv) and [nvm](https://github.com/nvm-sh/nvm)), and some tools from [modern-unix](https://github.com/ibraheemdev/modern-unix).
+> HHousen's configuration files managed by [chezmoi](https://github.com/twpayne/chezmoi). Uses [Zsh](https://en.wikipedia.org/wiki/Z_shell), [Antidote](https://antidote.sh/) for plugin management, [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/) for plugins and themes, [powerlevel10k](https://github.com/romkatv/powerlevel10k) as the theme, [Oh My Tmux](https://github.com/gpakosz/.tmux) for custom tmux configuration, [Atuin](https://github.com/atuinsh/atuin) for terminal history, [mise](https://mise.jdx.dev/) for runtime and CLI tool management, and some tools from [modern-unix](https://github.com/ibraheemdev/modern-unix).
 
 ## Installation/Setup
 
@@ -34,7 +34,7 @@ Run `sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply HHousen` to get everyt
 
 3. Preview changes that `chezmoi` would make to your `$HOME`: `chezmoi diff`.
 
-4. Apply the changes: `chezmoi apply`. This will automatically install antigen and packages required for certain plugins using the [run_once_install-packages.sh.tmpl](./.chezmoiscripts/run_once_install-packages.sh.tmpl) script. Upon the first launch, `antigen` will initialize and install everything else.
+4. Apply the changes: `chezmoi apply`. This will automatically install Antidote and packages required for certain plugins using the [run_once_install-packages.sh.tmpl](./.chezmoiscripts/run_once_install-packages.sh.tmpl) script. Upon the first launch, Antidote will initialize the plugins listed in [dot_zsh_plugins.txt](./dot_zsh_plugins.txt), which is applied to `~/.zsh_plugins.txt`.
 
 5. Launch zsh: `zsh`.
 
@@ -47,7 +47,7 @@ The font I use is the [Meslo Nerd Font patched for Powerlevel10k](https://github
 - [zsh](https://www.zsh.org/) as the shell
 - [chezmoi](https://www.chezmoi.io/) for dotfiles management
 - [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/) for plugins and themes
-- [Antigen](https://github.com/zsh-users/antigen) for plugin management
+- [Antidote](https://antidote.sh/) for plugin management
 - [powerlevel10k](https://github.com/romkatv/powerlevel10k) as the theme
 - [Oh My Tmux](https://github.com/gpakosz/.tmux) for custom tmux configuration
 - [Atuin](https://github.com/atuinsh/atuin) for terminal history
@@ -63,6 +63,7 @@ The font I use is the [Meslo Nerd Font patched for Powerlevel10k](https://github
 
 - Atuin manages command history, so zsh history persistence is disabled.
 - mise is activated in zsh and manages Node.js, Python, Claude Code, and Codex via [dot_config/mise/config.toml](./dot_config/mise/config.toml).
+- Zsh plugins are specified in [dot_zsh_plugins.txt](./dot_zsh_plugins.txt), which chezmoi manages as `~/.zsh_plugins.txt`.
 
 ## Agent configs
 
