@@ -1,0 +1,9 @@
+[tools]
+node = "lts"
+claude = "latest"
+codex = "latest"
+python = "3.13"
+
+[settings]
+idiomatic_version_file_enable_tools = ["python", "node", "npm"]
+# minimum_release_age = "7d"
