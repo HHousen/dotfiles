@@ -18,6 +18,8 @@ description = "Codex can read and edit files in the current workspace, and run c
 "~/.gitconfig" = "read"
 "~/.local/share/mise/installs" = "read"
 "~/.config/mise/" = "read"
+"/Library/Developer/CommandLineTools" = "read"
+"/var/folders/**" = "write"
 
 [permissions."CWD R/W".filesystem.":workspace_roots"]
 "." = "write"
