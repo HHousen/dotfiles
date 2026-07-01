@@ -1,5 +1,6 @@
 [tools]
 node = "lts"
+atuin = "latest"
 claude = "latest"
 codex = "latest"
 python = "3.13"

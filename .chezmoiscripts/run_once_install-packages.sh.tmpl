@@ -2,16 +2,35 @@
 
 echo "Installing packages... May need sudo access"
 {{ if eq .chezmoi.os "linux" -}}
-sudo pacman -S --needed git thefuck atuin zoxide fzf bat tealdeer lsd mise
+{{ $osID := .chezmoi.osRelease.id -}}
+{{ $osIDLike := index .chezmoi.osRelease "idLike" | default "" -}}
+{{ if or (eq $osID "arch") (eq $osID "manjaro") (contains "arch" $osIDLike) -}}
+sudo pacman -S --needed git thefuck zoxide fzf bat tealdeer lsd mise
+{{ else if or (eq $osID "ubuntu") (eq $osID "debian") (contains "debian" $osIDLike) -}}
+sudo apt update
+sudo apt install -y git curl ca-certificates fzf thefuck zoxide bat tealdeer lsd extrepo
+
+if ! command -v mise >/dev/null 2>&1; then
+    sudo extrepo enable mise
+    sudo apt update
+    sudo apt install -y mise
+fi
+{{ else -}}
+echo "Unsupported Linux distribution: {{ $osID }}. Please install git, thefuck, zoxide, fzf, bat, tealdeer, lsd, and mise manually."
+{{ end -}}
 {{ else if eq .chezmoi.os "darwin" -}}
-brew install git thefuck atuin zoxide fzf bat tealdeer lsd mise
+brew install git thefuck zoxide fzf bat tealdeer lsd mise
 {{ end -}}
 
 echo "Installing mise-managed tools..."
 mise install --yes
 
 echo "Updating tldr cache..."
-tldr --update
+if command -v tldr >/dev/null 2>&1; then
+    tldr --update
+else
+    echo "tldr command not found; skipping cache update."
+fi
 
 echo "Symbolically linking tmux runtime config..."
 ln -s -f ~/.tmux_runtime/.tmux.conf ~/.tmux.conf

@@ -28,7 +28,16 @@ bindkey '^[[3;5~' kill-word
 
 # Aliases
 alias rcat="$(which cat)"
+{{ if eq .chezmoi.os "linux" -}}
+{{ $osIDLike := index .chezmoi.osRelease "idLike" | default "" -}}
+{{ if or (eq .chezmoi.osRelease.id "ubuntu") (eq .chezmoi.osRelease.id "debian") (contains "debian" $osIDLike) -}}
+alias cat="$(which batcat)"
+{{ else -}}
 alias cat="$(which bat)"
+{{ end -}}
+{{ else -}}
+alias cat="$(which bat)"
+{{ end -}}
 alias ls="lsd"
 alias ll="ls -la"
 alias cd="z"
@@ -47,8 +56,8 @@ alias cwsc='cd {{ .ai_work_short_cut_path | quote }} && cwork'
 alias xwsc='cd {{ .ai_work_short_cut_path | quote }} && xwork'
 {{ end }}
 eval "$(zoxide init zsh)"
-eval "$(atuin init zsh)"
 eval "$(mise activate zsh)"
+eval "$(atuin init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
