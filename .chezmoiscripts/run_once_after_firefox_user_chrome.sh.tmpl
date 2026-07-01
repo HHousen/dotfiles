@@ -1,6 +1,6 @@
 #!/bin/bash
 
-{{ if .manage_firefox_user_chrome -}}
+{{ if index . "manage_firefox_user_chrome" -}}
 {{ if eq .chezmoi.os "darwin" -}}
 PROFILES_PATH="$HOME/Library/Application Support/Firefox"
 {{ else -}}

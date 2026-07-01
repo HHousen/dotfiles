@@ -4,7 +4,7 @@
 
 ## Installation/Setup
 
-Before following the installation steps below, create the file `~/.config/chezmoi/chezmoi.toml` with the following content:
+Optionally, before following the installation steps below, create the file `~/.config/chezmoi/chezmoi.toml` with any local template data you want to override:
 
 ```toml
 [data]
@@ -18,9 +18,9 @@ This file defines variables to be used by [`chezmoi`'s templates](https://github
 
 Explanation of the options:
 
-- `atuin_sync_address`: URL of your Atuin sync server. The public default is `https://api.atuin.sh`.
-- `manage_firefox_user_chrome`: Set to true to symlink [dot_firefoxUserChrome.css](./dot_firefoxUserChrome.css) into `~/.mozilla/firefox/<profile>/chrome/userChrome.css` (where `<profile>` is automatically determined and is probably your default firefox profile). This is carried out by the [run_once_after_firefox_user_chrome.sh.tmpl](./.chezmoiscripts/run_once_after_firefox_user_chrome.sh.tmpl) script. The default options in [dot_firefoxUserChrome.css](./dot_firefoxUserChrome.css) hide the horizontal tabs and is intended to be used with the [Tree Style Tab](https://github.com/piroor/treestyletab) firefox extension.
-- `git_email` and `git_name`: Global git user email and name set in `~/.gitconfig`.
+- `atuin_sync_address`: URL of your Atuin sync server. Defaults to `https://api.atuin.sh`.
+- `manage_firefox_user_chrome`: Set to true to symlink [dot_firefoxUserChrome.css](./dot_firefoxUserChrome.css) into `~/.mozilla/firefox/<profile>/chrome/userChrome.css` (where `<profile>` is automatically determined and is probably your default firefox profile). This is carried out by the [run_once_after_firefox_user_chrome.sh.tmpl](./.chezmoiscripts/run_once_after_firefox_user_chrome.sh.tmpl) script. Defaults to false. The options in [dot_firefoxUserChrome.css](./dot_firefoxUserChrome.css) hide the horizontal tabs and are intended to be used with the [Tree Style Tab](https://github.com/piroor/treestyletab) firefox extension.
+- `git_email` and `git_name`: Global git user email and name set in `~/.gitconfig`. If omitted, chezmoi leaves the `[user]` section out of `~/.gitconfig`.
 
 ### One Command
 

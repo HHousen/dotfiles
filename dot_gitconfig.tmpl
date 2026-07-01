@@ -1,6 +1,11 @@
-[user]
-	email = {{ .git_email }}
-	name = {{ .git_name }}
+{{- $gitEmail := index . "git_email" -}}
+{{- $gitName := index . "git_name" -}}
+{{- if or $gitEmail $gitName }}[user]
+{{ with $gitEmail }}	email = {{ . }}
+{{ end -}}
+{{ with $gitName }}	name = {{ . }}
+{{ end -}}
+{{ end -}}
 [init]
 	defaultBranch = main
 [push]
