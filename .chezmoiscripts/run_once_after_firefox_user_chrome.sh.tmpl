@@ -1,8 +1,17 @@
 #!/bin/bash
 
 {{ if .manage_firefox_user_chrome -}}
+{{ if eq .chezmoi.os "darwin" -}}
+PROFILES_PATH="$HOME/Library/Application Support/Firefox"
+{{ else -}}
 PROFILES_PATH="$HOME/.mozilla/firefox"
+{{ end -}}
 PROFILES_INI="$PROFILES_PATH/profiles.ini"
+
+if [ ! -d "$PROFILES_PATH" ]; then
+  echo "Firefox profiles path not found at $PROFILES_PATH; skipping userChrome.css symlink."
+  exit 0
+fi
 
 # First try to get the Default profile from Install section
 DEFAULT_PROFILE=$(grep -A1 "Install" "$PROFILES_INI" | grep "Default=" | cut -d= -f2)
