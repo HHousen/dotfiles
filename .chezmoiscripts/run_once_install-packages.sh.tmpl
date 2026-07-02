@@ -8,13 +8,17 @@ echo "Installing packages... May need sudo access"
 sudo pacman -S --needed git thefuck zoxide fzf bat tealdeer lsd mise
 {{ else if or (eq $osID "ubuntu") (eq $osID "debian") (contains "debian" $osIDLike) -}}
 sudo apt update
-sudo apt install -y git curl ca-certificates fzf thefuck zoxide bat tealdeer lsd extrepo
+sudo apt install -y git zsh curl ca-certificates fzf thefuck zoxide bat tealdeer lsd extrepo
 
 if ! command -v mise >/dev/null 2>&1; then
     sudo extrepo enable mise
     sudo apt update
     sudo apt install -y mise
 fi
+
+echo "Changing default shell to zsh..."
+sudo chsh -s $(which zsh) $(whoami)
+
 {{ else -}}
 echo "Unsupported Linux distribution: {{ $osID }}. Please install git, thefuck, zoxide, fzf, bat, tealdeer, lsd, and mise manually."
 {{ end -}}
