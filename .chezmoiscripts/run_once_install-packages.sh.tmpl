@@ -26,9 +26,6 @@ echo "Unsupported Linux distribution: {{ $osID }}. Please install git, thefuck, 
 brew install git thefuck zoxide fzf bat tealdeer lsd mise
 {{ end -}}
 
-echo "Installing mise-managed tools..."
-mise install --yes
-
 echo "Updating tldr cache..."
 if command -v tldr >/dev/null 2>&1; then
     tldr --update
