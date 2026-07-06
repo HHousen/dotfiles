@@ -20,6 +20,8 @@ description = "Codex can read and edit files in the current workspace, and run c
 "~/.config/mise/" = "read"
 "/Library/Developer/CommandLineTools" = "read"
 "/var/folders/**" = "write"
+"~/Library/Caches/pypoetry/" = "read"
+"/opt/homebrew" = "read"
 
 [permissions."CWD R/W".filesystem.":workspace_roots"]
 "." = "write"
