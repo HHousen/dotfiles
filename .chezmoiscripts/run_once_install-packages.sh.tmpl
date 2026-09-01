@@ -8,7 +8,8 @@ echo "Installing packages... May need sudo access"
 sudo pacman -S --needed git thefuck zoxide fzf bat tealdeer lsd mise
 {{ else if or (eq $osID "ubuntu") (eq $osID "debian") (contains "debian" $osIDLike) -}}
 sudo apt update
-sudo apt install -y git zsh curl ca-certificates fzf thefuck zoxide bat tealdeer lsd extrepo
+sudo apt install -y git zsh curl ca-certificates fzf zoxide bat extrepo
+sudo apt install -y thefuck tealdeer lsd
 
 if ! command -v mise >/dev/null 2>&1; then
     sudo extrepo enable mise
