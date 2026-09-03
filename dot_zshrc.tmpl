@@ -40,7 +40,6 @@ alias cat="$(which bat)"
 {{ end -}}
 alias ls="lsd"
 alias ll="ls -la"
-alias cd="z"
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -56,6 +55,7 @@ alias cwsc='cd {{ .ai_work_short_cut_path | quote }} && cwork'
 alias xwsc='cd {{ .ai_work_short_cut_path | quote }} && xwork'
 {{ end }}
 eval "$(zoxide init zsh)"
+alias cd="z"
 eval "$(mise activate zsh)"
 eval "$(atuin init zsh)"
 
