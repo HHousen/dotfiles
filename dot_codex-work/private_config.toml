@@ -2,7 +2,7 @@
 # Codex may append local project trust and hook trust state to this config.
 # Do not re-add those local state tables to chezmoi.
 
-approvals_reviewer = "user"
+approvals_reviewer = "auto_review"
 approval_policy = "on-request"
 check_for_update_on_startup = false
 project_root_markers = []
