@@ -17,11 +17,20 @@ if ! command -v mise >/dev/null 2>&1; then
     sudo apt install -y mise
 fi
 
-echo "Changing default shell to zsh..."
-sudo chsh -s $(which zsh) $(whoami)
+{{ else if eq $osID "fedora" -}}
+sudo dnf install -y git zsh curl ca-certificates fzf thefuck zoxide bat tealdeer lsd
+
+if ! command -v mise >/dev/null 2>&1; then
+    sudo dnf copr enable -y jdxcode/mise
+    sudo dnf install -y mise
+fi
 
 {{ else -}}
 echo "Unsupported Linux distribution: {{ $osID }}. Please install git, thefuck, zoxide, fzf, bat, tealdeer, lsd, and mise manually."
+{{ end -}}
+{{ if or (eq $osID "fedora") (eq $osID "ubuntu") (eq $osID "debian") (contains "debian" $osIDLike) -}}
+echo "Changing default shell to zsh..."
+sudo chsh -s $(which zsh) $(whoami)
 {{ end -}}
 {{ else if eq .chezmoi.os "darwin" -}}
 brew install git thefuck zoxide fzf bat tealdeer lsd mise
