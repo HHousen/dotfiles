@@ -41,5 +41,8 @@
       }
     ]
   },
-  "theme": "dark"
+  "theme": "dark",
+  "permissions": {
+    "defaultMode": "auto"
+  }
 }
