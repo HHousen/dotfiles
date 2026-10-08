@@ -19,5 +19,7 @@
 	edit = commit --amend --only
 	# List aliases
 	aliases = config --get-regexp alias
+	# Show the number of lines added and removed by a branch (default: current) since it diverged from main, excluding test files.
+	prsize = "!f() { git diff --shortstat \"main...${1:-HEAD}\" -- . \":(glob,exclude)**/test_*\" \":(glob,exclude)**/tests/**\"; }; f"
 [branch]
 	sort = -committerdate
